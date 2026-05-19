@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>⚡ ПЕРВЫЙ БИТ | Шпаргалка для собеседования — Яна Милюхина</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f4f8;
+            color: #1e293b;
+            padding: 32px 20px;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* карточки */
+        .card {
+            background: white;
+            border-radius: 32px;
+            padding: 24px 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+            border: 1px solid #e9edf2;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #1e3a8a;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 40px;
+            margin-bottom: 16px;
+            letter-spacing: 0.3px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            border-left: 6px solid #2563eb;
+            padding-left: 18px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 20px 0 10px 0;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .subhead {
+            font-size: 18px;
+            color: #2c3e66;
+            margin-bottom: 24px;
+            border-left: 3px solid #90a8d1;
+            padding-left: 16px;
+            font-weight: 500;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 20px 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 20px 0;
+        }
+
+        .insight-card {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 20px;
+            border: 1px solid #e2edff;
+            transition: 0.1s;
+        }
+
+        .quote {
+            background: #fefce8;
+            border-left: 5px solid #eab308;
+            padding: 16px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            margin: 16px 0;
+        }
+
+        .swot {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .swot-item {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #cfdfed;
+            padding: 12px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #eef3fc;
+            font-weight: 700;
+        }
+
+        .pill {
+            background: #eef2ff;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 4px 4px 0 0;
+        }
+
+        .badge-red {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        .badge-green {
+            background: #e0f2fe;
+            color: #0c4a6e;
+        }
+
+        hr {
+            margin: 28px 0;
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, #cbdff2, transparent);
+        }
+
+        @media (max-width: 780px) {
+            body { padding: 16px; }
+            .card { padding: 20px; }
+            h1 { font-size: 28px; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .swot { grid-template-columns: 1fr; }
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 13px;
+            color: #4b5e7a;
+            margin-top: 20px;
+        }
+        button {
+            background: #1e3a8a;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        .key-number {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="badge">🚀 ФИНАЛЬНЫЙ ДАЙДЖЕСТ | 20 мая 2026</div>
+        <h1>Первый БИТ · Руководитель дирекции клиентского обслуживания</h1>
+        <div class="subhead">Яна Милюхина · 10+ лет билайн (40+ сотрудников, P&L, AI-first, федеральный масштаб)</div>
+        <p>✅ <strong>Одна страница — всё, что нужно:</strong> SWOT, мероприятия, ответы на кейсы, план 90 дней, скрипты и цифры. Распечатайте и держите перед собой.</p>
+        <div style="margin-top: 16px;">
+            <button onclick="window.print()">🖨️ Распечатать / PDF</button>
+        </div>
+    </div>
+
+    <!-- 1. О КОМПАНИИ И ВАКАНСИИ -->
+    <div class="card">
+        <h2>📌 1. КЛЮЧЕВЫЕ ПОИНТЫ ПО КОМПАНИИ И РОЛИ</h2>
+        <div class="grid-2">
+            <div>
+                <p><span class="pill">🌍 9 стран</span> <span class="pill">🏢 9000+ сотрудников</span> <span class="pill">🏙️ 80+ городов РФ</span></p>
+                <p><span class="pill">🏭 40+ отраслей</span> <span class="pill">🎯 Главный конкурент: 1С-Рарус</span></p>
+                <p><strong>🎯 Цель должности:</strong> “Система контроля качества процессов и сотрудников, построенная по заданной архитектуре, дающая измеримый результат”.</p>
+                <p><strong>⚙️ Прямые задачи:</strong> аудит БП, контроль качества, жалобы, SLA, работа с преЛидами, передача клиентов между офисами, наставничество.</p>
+            </div>
+            <div class="quote">
+                💡 <strong>Главная боль из отзывов:</strong> сервис держится на отдельных звёздах, текучка → нестабильность, нет эскалации, цены непрозрачны, перекос KPI в продажи.
+                <br><br>👉 <strong>Ваш ответ:</strong> «Я строю систему, где хороший сервис — стандарт, а не случайность».
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. SWOT-АНАЛИЗ (федеральный) -->
+    <div class="card">
+        <h2>📊 2. SWOT-АНАЛИЗ (роль + компания)</h2>
+        <div class="swot">
+            <div class="swot-item"><strong style="color:#15803d;">✅ Сильные стороны (S)</strong><br>• Федеральный бренд, 9000+ сотрудников<br>• Ваш опыт: управление 40+ удалённо, AI-first, P&L<br>• Культура AI-first (потенциал для автоматизации)</div>
+            <div class="swot-item"><strong style="color:#b91c1c;">⚠️ Слабые стороны (W)</strong><br>• Качество сильно варьируется по офисам<br>• Нет единой системы контроля качества<br>• Сотрудники жалуются на KPI и перекос в продажи</div>
+            <div class="swot-item"><strong style="color:#ca8a04;">🌱 Возможности (O)</strong><br>• Построить федеральную систему КК с нуля<br>• Внедрить CSAT-опросы, AI-помощника, робота обзвона<br>• Снизить отток, повысить NPS</div>
+            <div class="swot-item"><strong style="color:#b91c1c;">🔥 Угрозы (T)</strong><br>• Сопротивление регионов<br>• Конкуренты (1С-Рарус, КОРУС)<br>• Бюрократия, долгие согласования</div>
+        </div>
+    </div>
+
+    <!-- 3. ТАБЛИЦА ПРОБЛЕМА → РЕШЕНИЕ -->
+    <div class="card">
+        <h2>📋 3. ТАБЛИЦА «ЖАЛОБЫ / ПРОБЛЕМЫ → ВАШИ РЕШЕНИЯ»</h2>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Проблема (из отзывов / аналитики)</th><th>Ваше решение (из опыта в билайне)</th><th>Срок</th></tr></thead>
+                <tbody>
+                    <tr><td>«Из-за текучки кадров качество хромает»</td><td>Единый стандарт + база знаний + чек-листы, наставничество</td><td>2 мес</td></tr>
+                    <tr><td>«За каждый "пук" просят деньги»</td><td>Аудит прайсов, витрина стоимости (как с автоутверждением заказов)</td><td>1 мес</td></tr>
+                    <tr><td>«В помощи отказано, до директора не дозвониться»</td><td>Инцидент-менеджмент (SLA, эскалация, root-cause)</td><td>1 мес</td></tr>
+                    <tr><td>«Сервис = конкретный человек»</td><td>Наставничество, тиражирование лучших практик, бонусы за обучение</td><td>2 мес</td></tr>
+                    <tr><td>«Кем бы ни работали, вы — продажник»</td><td>Пересмотр KPI: качество ≥40% премии, продажи отдельно или бонусом</td><td>1.5 мес</td></tr>
+                    <tr><td>«Нет сбора обратной связи — 9 отзывов за 2 года»</td><td>Пост-сервисный CSAT-опрос (робот обзвона / SMS / чат-бот)</td><td>1 мес</td></tr>
+                    <tr><td>«ПреЛиды "текут"»</td><td>SLA на ответ 2 часа, маршрутизация на топ-консультантов, дашборд конверсии</td><td>2 нед</td></tr>
+                    <tr><td>«Передача клиентов между офисами — потеря истории»</td><td>Чёткий процесс + SLA 4 часа + единый дашборд передачи</td><td>1.5 мес</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 4. ПЛАН 90 ДНЕЙ -->
+    <div class="card">
+        <h2>📅 4. ПЛАН ПЕРВЫХ 90 ДНЕЙ (пошагово)</h2>
+        <div class="grid-3">
+            <div class="insight-card"><span class="pill">📆 МЕСЯЦ 1</span><br><strong>Погружение + быстрые победы</strong><br>• 1-1 с командой (35 чел)<br>• Аудит 3 ключевых процессов<br>• Быстрые победы: скрипты, витрина стоимости, дашборд в Excel<br>• Запуск пост-сервисного опроса (робот обзвона)</div>
+            <div class="insight-card"><span class="pill">📆 МЕСЯЦ 2</span><br><strong>Система контроля качества</strong><br>• Единый стандарт (SLA, скрипты, эскалация)<br>• Пилотный скоринг + выборочный аудит<br>• Пилот в 2–3 офисах<br>• Разборы ошибок, обучение</div>
+            <div class="insight-card"><span class="pill">📆 МЕСЯЦ 3</span><br><strong>Масштаб + автоматизация</strong><br>• Федеральный дашборд качества<br>• ТЗ на AI-помощника, автоскоринг<br>• Внедрение KPI качества для руководителей офисов<br>• Презентация итогов руководству</div>
+        </div>
+        <div class="quote" style="margin-top: 16px;">🎯 <strong>Ключевая метрика успеха через 90 дней:</strong> система контроля качества работает во всех офисах, CSAT растёт, регионы не саботируют.</div>
+    </div>
+
+    <!-- 5. ВАШИ КЛЮЧЕВЫЕ ЦИФРЫ И УТП -->
+    <div class="card">
+        <h2>⚡ 5. ВАШЕ УТП + 5 ЦИФР (выучить наизусть)</h2>
+        <div class="grid-2">
+            <div>
+                <p>🔹 <strong>«Я системный руководитель. Навожу порядок там, где сервис держится на героях, а не на процессах.»</strong></p>
+                <p>🔹 «Сначала регламенты и контроль, потом автоматизация — AI лишь усилитель».</p>
+                <p>🔹 «Управляла федеральным сервисом в билайне: 40+ удалённо, P&L, кросс-продажи x3».</p>
+            </div>
+            <div>
+                <p><span class="key-number">40+</span> сотрудников удалённо</p>
+                <p><span class="key-number">10 FTE</span> экономия (робот обзвона)</p>
+                <p><span class="key-number">3x</span> рост проникновения кросс-продаж</p>
+                <p><span class="key-number">дни</span> вместо месяцев (time-to-market MVP)</p>
+                <p><span class="key-number">2</span> выращенных тимлида → заместители</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. ТОП-5 ОТВЕТОВ НА ВОПРОСЫ -->
+    <div class="card">
+        <h2>🎙 6. ТОП-5 ГОТОВЫХ ОТВЕТОВ (из нашей подготовки)</h2>
+        <div class="grid-2">
+            <div><strong>1. «Почему вы, если 10 лет в телекоме?»</strong><br>Методология универсальна. План входа: неделя 1 – погружение, неделя 2 – описание «как есть», неделя 3 – первые предложения. Разница в отраслях, а не в управлении.</div>
+            <div><strong>2. «Как наведёте порядок там, где сервис держится на звёздах?»</strong><br>Стандарт + база знаний + наставничество. Звёзды учат новичков за бонус. Хороший сервис становится нормой.</div>
+            <div><strong>3. «Как управлять удалённой командой 35 человек по РФ?»</strong><br>Jira (единое окно), KPI+дашборд, ежедневные синки, разбор ошибок. В билайне работало на 40+.</div>
+            <div><strong>4. «Что сделаете с жалобами на цены и эскалацию?»</strong><br>Аудит прайсов + витрина стоимости. Инцидент-менеджмент (SLA, root-cause). Клиент знает, кому жаловаться.</div>
+            <div><strong>5. «Как добьётесь единого качества во всех офисах?»</strong><br>Федеральный дашборд + рейтинг офисов + KPI качества в премии региональных руководителей.</div>
+        </div>
+    </div>
+
+    <!-- 7. СКРИПТ НА ВОЗРАЖЕНИЕ ПРО МАЛО ОТЗЫВОВ -->
+    <div class="card">
+        <h2>💬 7. СКРИПТ: «У вас мало отзывов, наверное клиенты довольны»</h2>
+        <div class="quote">
+            «Я согласна, недовольные пишут чаще. Но молчание клиентов — это не всегда довольство. Это может означать: им не предложили оставить отзыв, они не видят смысла или уходят молча к конкурентам. В билайне мы внедрили пост-сервисный опрос — и оказалось, что 20% "довольных" имели претензии. Я предлагаю внедрить CSAT-опрос после каждого обращения. Тогда мы будем знать реальную картину, а не гадать».
+        </div>
+    </div>
+
+    <!-- 8. СКРИПТ ПРО ОШИБКУ (УПРАВЛЕНИЕ ЛЮДЬМИ) -->
+    <div class="card">
+        <h2>🧠 8. ЛУЧШИЙ ОТВЕТ ПРО ОШИБКУ (Тип 1: слишком долго терпела)</h2>
+        <div class="insight-card">
+            <p><strong>«Моя самая большая ошибка — я слишком долго терпела неэффективного сотрудника, потому что боялась потерять “звезду”.</strong> В билайне у меня был оператор-гений, клиенты его обожали, но он срывал SLA, опаздывал, грубил коллегам. Я 4 месяца верила, что он исправится. Результат: лучший тимлид написал заявление об уходе. Я вовремя одумалась, уволила проблемного сотрудника, тимлида сохранила, но доверие команды потеряла на несколько месяцев. </p>
+            <p>📌 <strong>Урок:</strong> теперь у меня правило — 2 месяца на исправление, чёткие KPI, еженедельный контроль. Команда важнее одного гения. С тех пор провожу анонимные опросы “Кто тянет команду назад?” и действую без страха.»</p>
+        </div>
+    </div>
+
+    <!-- 9. ВОПРОСЫ К РАБОТОДАТЕЛЮ -->
+    <div class="card">
+        <h2>❓ 9. 5 ВОПРОСОВ, КОТОРЫЕ ЗАДАДИТЕ ВЫ (показывают уровень)</h2>
+        <ul style="margin-left: 24px; display: flex; flex-direction: column; gap: 8px;">
+            <li>1. «Какая архитектура/методология сейчас принята? (ITIL, ISO 9001, своя?)»</li>
+            <li>2. «Какие плановые показатели сейчас у дирекции клиентского обслуживания? (CSAT, FCR, SLA?)»</li>
+            <li>3. «Как сейчас организована работа с преЛидами и передача клиентов между офисами?»</li>
+            <li>4. «От каких KPI будет зависеть моя премия (доход без ограничений)?»</li>
+            <li>5. «Почему ушёл предыдущий руководитель?»</li>
+        </ul>
+    </div>
+
+    <!-- 10. ЗАПРЕЩЁННЫЕ ФРАЗЫ -->
+    <div class="card">
+        <h2>⛔ 10. ЧЕГО НЕЛЬЗЯ ГОВОРИТЬ (шпаргалка)</h2>
+        <div class="grid-2">
+            <div>
+                <p>❌ «Я больше стратег, руками работать не люблю»</p>
+                <p>❌ «У нас в билайне было лучше»</p>
+                <p>❌ «Моя главная сила — AI» (база — порядок)</p>
+                <p>❌ «За что мне отвечать, если IT не делает?»</p>
+                <p>❌ «Я не сильна в описании процессов»</p>
+            </div>
+            <div>
+                <p>❌ «У вас ресурсов меньше, чем в билайне»</p>
+                <p>❌ Первым делом «Какая зарплата?»</p>
+                <p>❌ «Через 2 года хочу быть на вашем месте»</p>
+                <p>❌ «Я не знаю, я об этом не думала»</p>
+                <p>❌ «Меня вынудили солгать»</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 11. ГОТОВЫЙ КЕЙС "ПАДЕНИЕ CSAT" (быстрый ответ) -->
+    <div class="card">
+        <h2>🧩 11. КЕЙС ЗА 1 МИНУТУ: «CSAT упал с 4,5 до 3,2 за месяц»</h2>
+        <div class="insight-card">
+            <p>1️⃣ <strong>Диагностика (48ч):</strong> слушаю 10 звонков, смотрю данные по офисам/операторам.<br>
+            2️⃣ <strong>Быстрая победа:</strong> если проблема в конкретном операторе — отстранение/обучение. Если в процессе — временный чек-лист.<br>
+            3️⃣ <strong>Системно:</strong> пост-сервисный опрос + эскалация низких оценок + root-cause разборы.<br>
+            4️⃣ <strong>Метрика успеха:</strong> через 2 недели CSAT >4,0, через месяц возврат к 4,5.</p>
+        </div>
+    </div>
+
+    <!-- 12. ДЕЙСТВИЯ ПО ПРЕЛИДАМ И ПЕРЕДАЧЕ МЕЖДУ ОФИСАМИ -->
+    <div class="card">
+        <h2>🔄 12. ВАШИ ДЕЙСТВИЯ: ПРЕЛИДЫ + ПЕРЕДАЧА МЕЖДУ ОФИСАМИ</h2>
+        <div class="grid-2">
+            <div class="insight-card"><strong>📌 ПреЛиды (потенциальные клиенты)</strong><br>• SLA на ответ — 2 часа<br>• Маршрутизация на сильных консультантов<br>• Отдельный дашборд конверсии преЛид → продажа</div>
+            <div class="insight-card"><strong>📌 Передача клиентов между офисами</strong><br>• Описать процесс «кто → кому → за какой срок»<br>• SLA на передачу 4 часа<br>• Единый дашборд передачи (где “завис” клиент)<br>• В билайне так настроили маршрутизацию — клиент не замечал переключений</div>
+        </div>
+    </div>
+
+    <!-- 13. ИТОГОВАЯ ФРАЗА -->
+    <div class="card">
+        <h2>🏆 13. ФИНАЛЬНАЯ ФРАЗА ДЛЯ СОБЕСЕДОВАНИЯ</h2>
+        <div class="quote" style="background:#eef2ff; border-left-color:#1e3a8a; font-size: 18px; text-align: center;">
+            «Я пришла не делать отчёты. Я пришла построить систему контроля качества, которая будет работать без меня через год. И у меня есть план, как это сделать за 90 дней.»
+        </div>
+        <div class="footer-note">
+            ✅ Перед собеседованием: повтори 5 цифр, 3 STAR-истории, прочитай вслух ответ про ошибку и кейс с CSAT.<br>
+            🖨️ Распечатай эту страницу — все ключи в одном месте.
+        </div>
+    </div>
+</div>
+</body>
+</html>

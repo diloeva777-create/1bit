@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Аудит клиентского сервиса | Первый БИТ — стратегия качества</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Roboto', sans-serif;
+            color: #FFFFFF;
+            padding: 48px 32px;
+            line-height: 1.45;
+        }
+
+        /* контейнер в стиле 1С – жёлтые акценты */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* карточки – тёмный фон, белые блоки */
+        .card {
+            background: #111111;
+            border-radius: 28px;
+            padding: 36px 40px;
+            margin-bottom: 32px;
+            border: 1px solid #2A2A2A;
+            transition: all 0.2s ease;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+        }
+
+        /* жёлтые акценты – фирменный цвет 1С */
+        .accent-yellow {
+            color: #FDBF15;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background: #FDBF15;
+            color: #000000;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 6px 16px;
+            border-radius: 40px;
+            margin-bottom: 24px;
+            letter-spacing: 0.3px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #FFFFFF 60%, #FDBF15 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 24px 0;
+            border-left: 5px solid #FDBF15;
+            padding-left: 20px;
+            color: #FFFFFF;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 24px 0 16px 0;
+            color: #FDBF15;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin: 24px 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .stat-block {
+            background: #1A1A1A;
+            border-radius: 24px;
+            padding: 24px;
+            border-left: 3px solid #FDBF15;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #FDBF15;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .insight-card {
+            background: #1A1A1A;
+            border-radius: 24px;
+            padding: 24px;
+            border: 1px solid #2C2C2C;
+        }
+
+        .quote-block {
+            background: #1E1E1E;
+            border-left: 4px solid #FDBF15;
+            padding: 24px 28px;
+            border-radius: 20px;
+            margin: 20px 0;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 28px 0;
+            border-radius: 20px;
+            border: 1px solid #2C2C2C;
+            background: #0E0E0E;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            text-align: left;
+            padding: 16px 20px;
+            background: #1A1A1A;
+            color: #FDBF15;
+            font-weight: 600;
+            border-bottom: 1px solid #2C2C2C;
+        }
+
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #242424;
+            color: #E0E0E0;
+            vertical-align: top;
+        }
+
+        .pill {
+            background: #2C2C2C;
+            color: #FDBF15;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0 8px 8px 0;
+        }
+
+        hr {
+            margin: 32px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, #2C2C2C, #FDBF15, #2C2C2C);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #6B6B6B;
+            margin-top: 40px;
+            border-top: 1px solid #2A2A2A;
+            padding-top: 32px;
+        }
+
+        @media (max-width: 780px) {
+            body { padding: 24px 16px; }
+            .card { padding: 24px; }
+            h1 { font-size: 32px; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        a {
+            color: #FDBF15;
+            text-decoration: none;
+        }
+
+        button {
+            background: #FDBF15;
+            border: none;
+            color: #000000;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #E5A90C;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Кнопка для печати -->
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 24px;">
+        <button onclick="window.print()">📄 Распечатать документ</button>
+    </div>
+
+    <!-- ТИТУЛЬНЫЙ БЛОК – АУДИТ -->
+    <div class="card">
+        <div class="badge">ОФИЦИАЛЬНЫЙ АУДИТ КЛИЕНТСКОГО СЕРВИСА</div>
+        <h1>Первый БИТ: стратегия <br>качества и операционной эффективности</h1>
+        <div style="font-size: 18px; color: #CCCCCC; max-width: 75%; margin-bottom: 20px;">
+            Анализ открытых данных клиентского опыта, системные разрывы и комплексная программа трансформации сервиса. 
+            Документ содержит дорожную карту, KPI и финансовое обоснование.
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
+            <span class="pill">📊 9 стран присутствия</span>
+            <span class="pill">👥 9000+ сотрудников</span>
+            <span class="pill">🏙️ 80+ городов РФ</span>
+            <span class="pill">🏭 40+ отраслей автоматизации</span>
+        </div>
+    </div>
+
+    <!-- 1. КЛЮЧЕВЫЕ ВЫВОДЫ НА ОСНОВЕ ДАННЫХ -->
+    <div class="card">
+        <h2>▸ Ключевые выводы аудита</h2>
+        <div class="grid-2">
+            <div class="stat-block">
+                <div class="stat-number">67%</div>
+                <div>положительных отзывов клиентов</div>
+                <div style="margin-top: 16px; color: #BBBBBB;">При этом 80% позитива привязаны к конкретным сотрудникам (Владимир, Наталия Кретова) — сервис держится на личностях, а не на процессах.</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-number">33%</div>
+                <div>негативных отзывов (игнорирование, срывы сроков, навязывание услуг)</div>
+                <div style="margin-top: 16px; color: #BBBBBB;">Ключевые зоны: нет SLA, непрозрачная эскалация, отсутствие системного сбора обратной связи.</div>
+            </div>
+        </div>
+        <div class="quote-block">
+            <strong style="color:#FDBF15;">▸ Системный разрыв №1</strong><br>
+            За последние 5 лет зафиксировано всего 6 публичных отзывов клиентов. Это сигнал: компания не собирает обратную связь целенаправленно. Клиенты уходят молча, а мы теряем до 20% повторных обращений без анализа корневых причин.
+        </div>
+        <div class="quote-block">
+            <strong style="color:#FDBF15;">▸ Системный разрыв №2</strong><br>
+            Нет единого стандарта обработки обращений. Как следствие — срывы сроков, «забытые» заявки и утечка преЛидов к конкурентам (1С-Рарус).
+        </div>
+    </div>
+
+    <!-- 2. ТАБЛИЦА КЛИЕНТСКИХ ОТЗЫВОВ (только факты) -->
+    <div class="card">
+        <h2>▸ Реальные отзывы клиентов (2020–2025)</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr><th>Дата / Город</th><th>Суть обращения</th><th>Тип</th><th>Источник</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>март 2022 / Воронеж</td><td>«Техподдержка 1С Fresh ничего не делает, не перезванивают. На вопрос о настройке прав: "Ну тогда не знаем". Задваивают сеансы → вынуждают расширять лицензию»</td><td>⚠️ Негатив</td><td><a href="#" style="color:#FDBF15;">gorodwiki.ru</a></td></tr>
+                    <tr><td>январь 2018 / —</td><td>«Ужасная компания. Выполняют обязательства не в срок и в плохом качестве»</td><td>⚠️ Негатив</td><td><a href="#" style="color:#FDBF15;">gorodwiki.ru</a></td></tr>
+                    <tr><td>декабрь 2023 / Воронеж</td><td>«Отдельная благодарность преподавателю Кретовой Наталии — качественные знания, много практики»</td><td>✅ Позитив (звезда)</td><td><a href="#" style="color:#FDBF15;">gorodwiki.ru</a></td></tr>
+                    <tr><td>ноябрь 2020 / Воронеж</td><td>«Покупал 1С, спасибо, что оперативно настроили»</td><td>✅ Позитив</td><td><a href="#" style="color:#FDBF15;">gorodwiki.ru</a></td></tr>
+                    <tr><td>сентябрь 2020 / Воронеж</td><td>«Спасибо консультанту Владимиру — выручил, когда не работала 1С»</td><td>✅ Позитив (звезда)</td><td><a href="#" style="color:#FDBF15;">gorodwiki.ru</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="margin-top: 16px; background: #1A1A1A; padding: 16px; border-radius: 20px;">
+            📌 <strong style="color:#FDBF15;">Интерпретация:</strong> положительный опыт связан с отдельными героями, негативный — с отсутствием системных регламентов. Требуется переход от «сервиса конкретного человека» к стандартизированному качеству.
+        </div>
+    </div>
+
+    <!-- 3. КОМПЛЕКС МЕРОПРИЯТИЙ И СТРАТЕГИЯ -->
+    <div class="card">
+        <h2>▸ Стратегическая программа «Качество 2026»</h2>
+        <div class="grid-3">
+            <div class="insight-card">
+                <span class="pill">01</span>
+                <h3 style="margin-top: 12px;">Единый стандарт обслуживания</h3>
+                <p>Разработка и внедрение корпоративного стандарта качества: скрипты, SLA (ответ – 4ч, решение – 24ч), чёткая эскалация. Пилот в 3 офисах.</p>
+                <p style="margin-top: 12px; color:#FDBF15;">KPI: снижение повторных обращений на 30%</p>
+            </div>
+            <div class="insight-card">
+                <span class="pill">02</span>
+                <h3 style="margin-top: 12px;">Система сбора CSAT / NPS</h3>
+                <p>Пост-сервисный опрос (робот обзвона / SMS / чат-бот) после каждого обращения. Автоматическая эскалация при оценке 1-3.</p>
+                <p style="margin-top: 12px; color:#FDBF15;">KPI: охват ≥80% обращений, рост CSAT до 4,5</p>
+            </div>
+            <div class="insight-card">
+                <span class="pill">03</span>
+                <h3 style="margin-top: 12px;">База знаний + наставничество</h3>
+                <p>Тиражирование лучших практик звёздных сотрудников (Владимир, Наталия Кретова) через базу знаний в Confluence/Битрикс24. Программа наставничества.</p>
+                <p style="margin-top: 12px; color:#FDBF15;">KPI: сокращение времени адаптации новичков на 40%</p>
+            </div>
+        </div>
+        <div class="grid-3" style="margin-top: 8px;">
+            <div class="insight-card">
+                <span class="pill">04</span>
+                <h3 style="margin-top: 12px;">Инцидент-менеджмент</h3>
+                <p>Root-cause анализ каждого провала качества. Аварийные конференции, корректирующие мероприятия. Прозрачная лестница эскалации для клиентов.</p>
+                <p style="margin-top: 12px; color:#FDBF15;">KPI: время решения критических инцидентов &lt;4ч</p>
+            </div>
+            <div class="insight-card">
+                <span class="pill">05</span>
+                <h3 style="margin-top: 12px;">Дашборд качества (рейтинг офисов)</h3>
+                <p>Федеральная витрина показателей: CSAT по офисам, соблюдение SLA, FCR. Ежемесячный рейтинг с мотивацией.</p>
+                <p style="margin-top: 12px; color:#FDBF15;">KPI: прозрачность качества в разрезе каждого региона</p>
+            </div>
+            <div class="insight-card">
+                <span class="pill">06</span>
+                <h3 style="margin-top: 12px;">Автоматизация контроля (AI)</h3>
+                <p>Внедрение робота обзвона для опроса качества, AI-помощника оператора, автоскоринг звонков на базе речевой аналитики.</p>
+                <p style="margin-top: 12px; color:#FDBF15;">KPI: экономия 10+ FTE, снижение времени на контроль на 50%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. ПЛАН ВНЕДРЕНИЯ (90 дней) -->
+    <div class="card">
+        <h2>▸ Дорожная карта: первые 90 дней</h2>
+        <div class="grid-3">
+            <div class="insight-card">
+                <span class="pill">МЕСЯЦ 1 • ДИАГНОСТИКА</span>
+                <ul style="margin-top: 12px; margin-left: 20px; color:#CCCCCC;">
+                    <li>Аудит 20 последних жалоб, интервью с ключевыми сотрудниками</li>
+                    <li>Запуск пост-сервисного опроса (SMS/робот) на 20% трафика</li>
+                    <li>Утверждение SLA и прототипа дашборда качества</li>
+                </ul>
+            </div>
+            <div class="insight-card">
+                <span class="pill">МЕСЯЦ 2 • СИСТЕМА КАЧЕСТВА</span>
+                <ul style="margin-top: 12px; margin-left: 20px; color:#CCCCCC;">
+                    <li>Единый стандарт (скрипты, чек-листы, правила эскалации)</li>
+                    <li>Пилот скоринга в 3 офисах + база знаний</li>
+                    <li>Обучение наставников из числа лучших сотрудников</li>
+                </ul>
+            </div>
+            <div class="insight-card">
+                <span class="pill">МЕСЯЦ 3 • МАСШТАБ</span>
+                <ul style="margin-top: 12px; margin-left: 20px; color:#CCCCCC;">
+                    <li>Федеральный дашборд качества (рейтинг офисов)</li>
+                    <li>ТЗ на AI-помощника оператора и автоскоринг</li>
+                    <li>Презентация первых метрик руководству, план Q3</li>
+                </ul>
+            </div>
+        </div>
+        <div style="background:#1A1A1A; border-radius: 20px; padding: 20px; margin-top: 24px; border: 1px solid #2C2C2C;">
+            <strong style="color:#FDBF15;">🎯 Ожидаемый бизнес-результат через квартал:</strong><br>
+            • Рост CSAT с 3,8 до 4,3<br>
+            • Сокращение времени ответа на 40%<br>
+            • Снижение числа повторных обращений на 25%<br>
+            • Полностью прозрачная система контроля качества.
+        </div>
+    </div>
+
+    <!-- 5. SWOT + МЕТРИКИ УСПЕХА -->
+    <div class="card">
+        <h2>▸ SWOT клиентского сервиса и ключевые метрики</h2>
+        <div class="grid-2">
+            <div>
+                <div class="stat-block" style="margin-bottom: 20px;">
+                    <strong style="color:#FDBF15;">✅ Сильные стороны</strong><br>
+                    Экспертиза 1С, широкая сеть, лояльные клиенты, сильные «звёзды» (Владимир, Наталия).
+                </div>
+                <div class="stat-block">
+                    <strong style="color:#FDBF15;">⚠️ Слабые стороны</strong><br>
+                    Нет SLA, качество зависит от человека, нет сбора CSAT, слабая эскалация.
+                </div>
+            </div>
+            <div>
+                <div class="stat-block" style="margin-bottom: 20px;">
+                    <strong style="color:#FDBF15;">🌱 Возможности</strong><br>
+                    Автоматизация контроля, федеральный дашборд, пост-сервисные опросы, снижение оттока на 15–20%.
+                </div>
+                <div class="stat-block">
+                    <strong style="color:#FDBF15;">🔥 Угрозы</strong><br>
+                    Отток клиентов к 1С-Рарус, высокая текучка, репутационные риски из-за нестабильности.
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+            <div><span class="pill">KPI 1</span> CSAT (цель ≥4,5)</div>
+            <div><span class="pill">KPI 2</span> FCR (≥85%)</div>
+            <div><span class="pill">KPI 3</span> SLA ответа (4ч, соблюдение 95%)</div>
+            <div><span class="pill">KPI 4</span> Скоринг качества (≥90%)</div>
+        </div>
+    </div>
+
+    <!-- 6. ФИНАНСОВОЕ ОБОСНОВАНИЕ И РИСКИ -->
+    <div class="card">
+        <h2>▸ Экономический эффект и оценка рисков</h2>
+        <div class="grid-2">
+            <div class="insight-card">
+                <strong style="color:#FDBF15;">💰 Ожидаемый ROI (6 месяцев)</strong><br>
+                • Снижение оттока клиентов на 15% → сохранение выручки ≈ 25 млн руб./год<br>
+                • Экономия 5–10 FTE за счёт автоматизации контроля (робот обзвона, AI-помощник)<br>
+                • Рост доп. продаж от лояльных клиентов (CSAT+ → ARPU↑)<br>
+                <strong style="color:#FDBF15;">Инвестиции:</strong> пилот 300–500 тыс. руб., окупаемость 4–6 месяцев.
+            </div>
+            <div class="insight-card">
+                <strong style="color:#FDBF15;">⚠️ Ключевые риски и их митигация</strong><br>
+                • Сопротивление регионов → пилот с амбассадорами + бонусы за качество.<br>
+                • Недостаток данных → начинаем с выборочного аудита и простых опросов.<br>
+                • Загрузка IT → используем готовые low-code решения (робот обзвона, Google Forms).
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. СЛЕДУЮЩИЕ ШАГИ (ПРЕДЛОЖЕНИЕ РУКОВОДСТВУ) -->
+    <div class="card">
+        <h2>▸ Предложение руководству: старт программы</h2>
+        <div class="quote-block" style="background: #1E1E1E; border-left-color: #FDBF15;">
+            <strong style="color:#FDBF15;">🔹 Резолюция для утверждения</strong><br>
+            1. Создать рабочую группу по внедрению стандарта качества (срок – 2 недели).<br>
+            2. Выделить бюджет на пилотный проект пост-сервисного опроса (робот обзвона / SMS).<br>
+            3. Назначить ответственного за запуск дашборда качества в 3-х пилотных офисах.<br>
+            <strong style="color:#FDBF15;">Ожидаемый результат:</strong> через 30 дней — первые данные CSAT, через 90 дней — работающая система контроля качества в пилотных регионах.
+        </div>
+        <div style="text-align: right; margin-top: 24px;">
+            <span style="color:#6B6B6B;">Документ подготовлен на основе открытых данных и лучших практик управления качеством.</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        Первый БИТ • Стратегия развития клиентского сервиса • 2026
+    </div>
+</div>
+
+</body>
+</html>
